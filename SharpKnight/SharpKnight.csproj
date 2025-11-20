@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<!-- make it a library -->
+	<OutputType>Library</OutputType>
+	<!-- ensure it's not self-contained -->
+	<SelfContained>false</SelfContained>
+	<UseAppHost>false</UseAppHost>
+	<TargetFramework>net9.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<PublishSingleFile>false</PublishSingleFile>
+	<RuntimeIdentifier></RuntimeIdentifier>
+	<PublishTrimmed>false</PublishTrimmed>
+	<AspNetCoreHostingModel>OutofProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="4.4.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.2.0" />
+  </ItemGroup>
+
+</Project>

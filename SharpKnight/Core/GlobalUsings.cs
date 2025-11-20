@@ -1,0 +1,1 @@
+﻿global using U64 = System.UInt64;
