@@ -185,7 +185,7 @@ namespace SharpKnight.Tests
         public void TestPositionSetup()
         {
             Utility.SetupTestPosition(board, "initial");
-            board.PrintBitboards();
+            //board.PrintBitboards();
             Utility.PrintBitboard(board.GetWhitePawns());
             Assert.That(board.GetWhitePawns(), Is.EqualTo(0x000000000000FF00UL));
 
@@ -270,61 +270,36 @@ namespace SharpKnight.Tests
         [Test]
         public void PerftD1CalcKiwiPete()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD1CalcKiwiPete.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1");
             Assert.That(Utility.Perft(board, 1, 1), Is.EqualTo(48UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD1CalcKiwiPete_e5g6()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD1CalcKiwiPete_e5g6.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("r3k2r/p1ppqpb1/bn2pnN1/3P4/1p2P3/2N2Q1p/PPPBBPPP/R3K2R b KQkq - 0 1");
             Assert.That(Utility.Perft(board, 1, 1, true), Is.EqualTo(42UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD2CalcKiwiPete()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD2CalcKiwiPete.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1");
             Assert.That(Utility.Perft(board, 2, 2, true), Is.EqualTo(2039UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD3CalcKiwiPete()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD3CalcKiwiPete.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1");
             Assert.That(Utility.Perft(board, 3, 3, true), Is.EqualTo(97862UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD4CalcKiwiPete()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD4CalcKiwiPete.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1");
             Assert.That(Utility.Perft(board, 4, 4, true), Is.EqualTo(4085603UL));
-
-            outfile.Flush();
         }
 
         // --- Perft: Position 3 (chessprogramming.org) ---
@@ -445,25 +420,15 @@ namespace SharpKnight.Tests
         [Test]
         public void PerftD3CalcPos5()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD3CalcPos5.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8");
             Assert.That(Utility.Perft(board, 3, 3, true), Is.EqualTo(62379UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD2CalcPos5_d7c8n()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD2CalcPos5_d7c8n.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("rnNq1k1r/pp2bppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R b KQ - 0 8");
             Assert.That(Utility.Perft(board, 2, 2, true), Is.EqualTo(1607UL));
-
-            outfile.Flush();
         }
 
         [Test]
@@ -611,37 +576,22 @@ namespace SharpKnight.Tests
         [Test]
         public void PerftD4CalcStandardPos5()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD4CalcStandardPos5.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("4k2r/8/8/8/8/8/8/4K3 w k - 0 1");
             Assert.That(Utility.Perft(board, 4, 4, true), Is.EqualTo(8290UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD3CalcStandardPos5_e1d1()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD3CalcStandardPos5_e1d1.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("4k2r/8/8/8/8/8/8/3K4 b k - 1 1");
             Assert.That(Utility.Perft(board, 3, 3, true), Is.EqualTo(1255UL));
-
-            outfile.Flush();
         }
 
         [Test]
         public void PerftD2CalcStandardPos5_h8h1()
         {
-            using var outfile = new StreamWriter("TestOutput/UtilityTest_PerftD2CalcStandardPos5_h8h1.txt");
-            Console.SetOut(outfile);
-
             board.SetupPositionFromFEN("4k3/8/8/8/8/8/8/3K3r w - - 2 2");
             Assert.That(Utility.Perft(board, 2, 2, true), Is.EqualTo(57UL));
-
-            outfile.Flush();
         }
 
         [Test]
