@@ -39,6 +39,10 @@ namespace SharpKnight.Core
         public const U64 FileG    = 0x4040404040404040UL;
         public const U64 FileH    = 0x8080808080808080UL;
 
+        // Light/Dark square masks
+        public const U64 LightSquareMask = 0xAA55AA55AA55AA55UL;
+        public const U64 DarkSquareMask = 0x55AA55AA55AA55AAUL;
+
         // ---- Castling masks (squares between king and rook) ----
         public const U64 W_ShortCastleMask = 0x0000000000000060UL; // f1,g1  
         public const U64 W_LongCastleMask  = 0x000000000000000EUL; // b1,c1,d1

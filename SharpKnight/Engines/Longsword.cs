@@ -22,10 +22,6 @@ namespace SharpKnight.Engines
         // History heuristic bounds
         private const int HISTORY_MAX = 65_536;
 
-        // Light/Dark square masks
-        private const ulong LIGHT_SQUARE_MASK = 0xAA55AA55AA55AA55UL;
-        private const ulong DARK_SQUARE_MASK = 0x55AA55AA55AA55AAUL;
-
         // Initial total count of non-pawn, non-king pieces for game-phase blending
         private const int INIT_MAJ_MIN_PIECES = 14;
 
@@ -555,7 +551,7 @@ namespace SharpKnight.Engines
             // === Bishops ===
             if (Popcount(bishops) >= 2)
             {
-                if (((LIGHT_SQUARE_MASK & bishops) != 0) && ((DARK_SQUARE_MASK & bishops) != 0))
+                if (((BUTIL.LightSquareMask & bishops) != 0) && ((BUTIL.DarkSquareMask & bishops) != 0))
                     score += @params.bishopPairBonus;
             }
             tmp = bishops;
