@@ -325,7 +325,7 @@ namespace SharpKnight
     }
 
     /// <summary>
-    /// Class representing a game's stateful information such as side to move,
+    /// Struct representing a game's stateful information such as side to move,
     /// castling rights, number of moves played etc.
     /// </summary>
     public struct GameState
